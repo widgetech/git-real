@@ -61,3 +61,37 @@ to add changes and commit in same step
 git commit -a -m "<comment>"
 
 will only do a commit on files that are currently being tracked
+
+Reset the last commit and put it back into staging
+git reset --soft HEAD^
+
+to add a file to the last commit statment
+git commit --amend -m "modify readme and add todo.txt"
+
+undolast commit and all changes
+git reset --hard HEAD^
+
+undo last 2 commits and all changes
+git reset --hard HEAD^^
+
+Staging and remote
+First step is to create a remote repository
+
+on github.com
+create the repository
+back in the git shell, to add the repository
+git remote add origin https://github.com/widgetech/git-real.git
+
+origin - name for repository on my pc
+web address of the repository
+
+to show remote repositories
+git remote -v
+
+To push to the remote
+git push -u origin master
+origin - our name of what is being pushed
+master - the branch we want pushed
+
+to pull the information down from the remote repsitory
+git pull
