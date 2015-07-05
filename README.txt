@@ -95,3 +95,54 @@ master - the branch we want pushed
 
 to pull the information down from the remote repsitory
 git pull
+
+;; Cloning and branching
+
+to clone an existing repository
+created a second user widgetech-2
+git clone https://github.com/widgetech/git-real.git
+
+to change the name of the repository
+git clone https://github.com/widgetech/git-real.git git-demo
+
+move the cloned git repository on local pc
+git remote -v
+
+to list out the repoistories 
+and sets the branch to master
+
+going to do some work on the local repository and should create a branch to make the changes
+git branch cat
+
+to see what branchs are available
+git branch
+
+to move to a branch
+git checkout branch
+
+changing to a different time line in that changes to the files i make on branch "cat" are only
+	good on branch cat. None of the changes are seen on master
+
+when done with work on branch and want to merge to master
+move to master
+git merge cat - which is branch name
+
+after done with merge and done with cat, get rid of the branch
+git branch -d cat
+
+to create a new branch and move to the branch
+git checkout -b admin
+
+making whatever changes on this branch and when i change to another branck will not move them to branch
+i move to. so
+
+git checkout master
+
+perform what i need to do
+git pull - will update the master with latest and greatest from the repository
+
+git push  - will push the changes from the branch i am on (master in this case) up to the repository
+
+git checkout <branch>  - will move t the other branch i was working on and my changes should still be there
+
+
