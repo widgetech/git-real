@@ -151,3 +151,43 @@ git checkout <branch>  - will move t the other branch i was working on and my ch
 to create a branch and move to it in one command
 git checkout -b <branch>
 
+Start again at #3 and watch videos. Missing something at video #5
+Cloning and Branching
+
+git clone <url provided by github>
+will create a directory by that name and will download all files into the directory
+can also do the below and change the name of what GitHub has
+git clone <url> <wanted name>
+
+before making any changes to a clone repository, good idea to create a branch and then perform 
+merges
+git branch <branch_name>
+
+Will then need to move to the branch
+git checkout <branch_name>
+
+This changes times lines or actually it allows us to modify the files without modifying the original
+on the master branch
+
+Create a file on the new branch like
+echo "Some text" > test.txt
+
+do an ls and the file will be present
+move back to the master branch and the file will not be there
+
+after the changes have been made move back to master
+git checkout master
+
+now merge all changes from the branch to the master branch
+git merge <branch_name>
+
+After done with branch should delete the branch
+git branch -d <branch_name>
+
+Shortcut to create a branch and to move into the branch
+git checkout -b admin
+
+and this change for lesson #3
+
+Move to level 4
+Collaboration basics
