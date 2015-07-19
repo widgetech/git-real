@@ -205,5 +205,10 @@ git push origin shopping_cart  ;; will create a remote branch and link to local 
 command was rejected by git and needed to
 git push --set-upstream origin shopping_cart
 
+git remote show origin   ;; will show status of a branches and remote branchs n status of branches
 
+To delete a remote branch
+git push origin :<branch name>
 
+if other people have the remote the branch it will show as stale when they do a 
+git remote show origin
