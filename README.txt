@@ -127,6 +127,8 @@ changing to a different time line in that changes to the files i make on branch 
 	good on branch cat. None of the changes are seen on master
 
 when done with work on branch and want to merge to master
+
+git branch -r   ;; will show all of the remote branchs
 move to master
 git merge cat - which is branch name
 
@@ -199,6 +201,9 @@ Level 5
 git checkout -b shopping_cart  ;; create a branch on the local PC
 
 git push origin shopping_cart  ;; will create a remote branch and link to local branch to track
+
+command was rejected by git and needed to
+git push --set-upstream origin shopping_cart
 
 
 
