@@ -212,3 +212,10 @@ git push origin :<branch name>
 
 if other people have the remote the branch it will show as stale when they do a 
 git remote show origin
+
+if another user does a
+git pull
+it will show the new branch
+
+git branch - shows local branchs
+git branch -r  - shows all remote branches
