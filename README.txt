@@ -46,6 +46,17 @@ staging and remote
 to see differences between unstaged files and staged files
 git diff
 
+Level 6 Rebasing
+
+git fetch ;; retrieves information but does not merge changes
+
+git rebase
+1. Move all changes to  master which are not in  origin/maaster to a temporayr area
+2. Run all origin/master commits
+3. Run all commits in the temporary area, one at a time
+
+Does automatically, does nto ask to merge commit
+
 by running 
 git add <file>
 
@@ -219,3 +230,83 @@ it will show the new branch
 
 git branch - shows local branchs
 git branch -r  - shows all remote branches
+
+git push origin :<remotebranch>  - to delete the remote branch
+
+this shows the branches on the remote
+C:\temp\gitreal [master]> git branch -r
+  origin/master
+  origin/shopping_cart
+C:\temp\gitreal [master]> git push orgin:shopping_cart
+fatal: You are pushing to remote 'orgin:shopping_cart', which is not the upstrea
+m of
+your current branch 'master', without telling me what to push
+to update which remote branch.
+
+The command needs the space betwee the origin and :
+C:\temp\gitreal [master]> git push origin :shopping_cart
+To https://github.com/widgetech/git-real.git
+ - [deleted]         shopping_cart
+C:\temp\gitreal [master]>
+
+After done with remote branch need to delete
+git remote show origin  -- this will show the branch as stale if someone else deleted the remote branch
+
+to get rid of that
+git remote prune origin  -- this will clean up deleted remote branches
+
+A tag is a reference to a commit used mostley for release versioning
+
+git tag  ; list of all tages
+git check out <tag>  ;; check out the code at the commit
+git tag -a <tag name> -m "<comment>"
+git push --tags  ;; to push the tags to the remote
+
+git tag
+git checkout v0.0.1
+git tag -a v0.0.3 -m "version 0.0.3"
+git push --tags  ;; pushs the tags to the remote server, looks like it bundles the files up being
+	monitored under that tag. Not sure what that will do for me
+git push --tags
+
+Git real 7
+git log - to show log of chagnes
+
+git log --pretty=oneline
+git log --pretty=format:"%h $ad- %s [%an]"
+git log --pretty -p ;; will show changes made
+git log --pretty --start   ;; shows insertions and deletions
+git log --oneline -- graph  ;; shows branches graphically
+git log --until=1.minute.ago
+git log --since=1.day.ago
+git log --since=1.hour.ago
+git log --since=1.month.ago --until=2.weeks.ago
+git log --since=2000-01-01 --until=2015-07-21
+git diff  ;; will show diffrences since last commit
+git diff HEAD  ;; does the same as gid diff
+git diff HEAD^  ;; parent of latest commit
+git diff HEAD^^  ;; grandparent of latest commit
+git diff HEAD~5  ;; five commits ago
+git diff HEAD^..HEAD  ;; second most recent commit vs most recent
+git diff <hash>..<hash>  ;; first hash to compare to other hash. Only need first few characters of the hash
+git diff <branch> <branch>  ;; to compare different branches
+git diff --since=1.week.ago --until=1.minute.ago
+git blame <file> --date short  ;; will show person responsible for changes/commits to the file in question
+
+
+to exculde files from being monitored or uploaded to the repository us
+.git/info/exclude
+	tutorial.mpt
+	*.mp4
+
+Should not monitor log files
+in the .gitignore add any log files
+
+to remove a file from git
+
+git rm <file.name>
+
+git status
+
+git commit -m "Remove <filename>"
+
